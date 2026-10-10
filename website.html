@@ -1,0 +1,1720 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Memahami Depressive Feeling</title>
+
+    <!-- BOOTSTRAP 5 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        /* =========================
+           GLOBAL
+        ========================= */
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(
+                135deg,
+                #fff0df,
+                #f3e8ff
+            );
+            color: #333;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            background: white;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            color: #0797d5 !important;
+        }
+
+        .nav-link {
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .nav-link:hover {
+            color: #7c3aed !important;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            padding: 70px 20px 60px;
+            text-align: center;
+
+            background: linear-gradient(
+                135deg,
+                #dc6b75,
+                #f5a765,
+                #f7c98c
+            );
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 50px;
+            font-weight: 900;
+            line-height: 1.1;
+
+            text-shadow:
+                3px 3px 0 #078fd0,
+                -1px -1px 0 #078fd0;
+        }
+
+        .hero-subtitle {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+
+            border-radius: 50px;
+
+            background: #0797d5;
+            color: white;
+
+            font-size: 24px;
+            font-weight: 800;
+
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-text {
+            color: white;
+            font-size: 19px;
+            margin-top: 20px;
+        }
+
+
+        /* =========================
+           POSTER
+        ========================= */
+
+        .poster-container {
+            max-width: 700px;
+            margin: 35px auto 0;
+        }
+
+        .poster-image {
+            width: 100%;
+            height: auto;
+            display: block;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 20px 45px rgba(0, 0, 0, 0.25);
+
+            transition: 0.3s;
+        }
+
+        .poster-image:hover {
+            transform: scale(1.015);
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        .start-button {
+            margin-top: 30px;
+            padding: 13px 35px;
+
+            border-radius: 50px;
+            font-weight: 700;
+
+            transition: 0.3s;
+        }
+
+        .start-button:hover {
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        .section {
+            padding: 70px 0;
+        }
+
+        .section-title {
+            text-align: center;
+
+            color: #098fd0;
+
+            font-size: 34px;
+            font-weight: 800;
+        }
+
+        .section-description {
+            max-width: 700px;
+            margin: 10px auto 45px;
+
+            text-align: center;
+            color: #666;
+        }
+
+
+        /* =========================
+           MOOD CARD
+        ========================= */
+
+        .mood-card {
+            border: none;
+            border-radius: 25px;
+
+            background: white;
+
+            overflow: hidden;
+            cursor: pointer;
+            height: 100%;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.08);
+
+            transition: all 0.3s ease;
+        }
+
+        .mood-card:hover {
+            transform: translateY(-10px);
+
+            box-shadow:
+                0 18px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .mood-icon {
+            font-size: 70px;
+            padding: 30px 10px 15px;
+        }
+
+        .mood-title {
+            background: linear-gradient(
+                135deg,
+                #7138e8,
+                #a03df4
+            );
+
+            color: white;
+            padding: 16px;
+
+            text-align: center;
+
+            font-weight: 800;
+            font-size: 19px;
+        }
+
+        .mood-description {
+            padding: 20px;
+
+            text-align: center;
+            color: #666;
+
+            min-height: 100px;
+        }
+
+
+        /* =========================
+           RESULT
+        ========================= */
+
+        #resultSection {
+            display: none;
+        }
+
+        .result-card {
+            border: none;
+            border-radius: 30px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .result-header {
+            padding: 40px;
+
+            text-align: center;
+            color: white;
+
+            background: linear-gradient(
+                135deg,
+                #0797d5,
+                #7138e8
+            );
+        }
+
+        .result-icon {
+            font-size: 75px;
+        }
+
+        .result-header h2 {
+            font-weight: 800;
+            margin-top: 10px;
+        }
+
+
+        /* =========================
+           LEVEL BUTTON
+        ========================= */
+
+        .level-btn {
+            border-radius: 50px;
+
+            padding: 11px 28px;
+
+            margin: 5px;
+
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           SOLUTION
+        ========================= */
+
+        .solution-item {
+            background: #f7f8fa;
+
+            border-radius: 15px;
+
+            padding: 17px 20px;
+
+            margin-bottom: 12px;
+
+            transition: 0.2s;
+        }
+
+        .solution-item:hover {
+            background: #edf6ff;
+            transform: translateX(5px);
+        }
+
+
+        /* =========================
+           FACTOR
+        ========================= */
+
+        .info-card {
+            border: none;
+
+            border-radius: 25px;
+
+            overflow: hidden;
+
+            height: 100%;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .info-header {
+            background: #0797d5;
+
+            color: white;
+
+            padding: 17px;
+
+            text-align: center;
+
+            font-weight: 800;
+        }
+
+        .info-body {
+            padding: 25px;
+        }
+
+
+        /* =========================
+           WHAT TO DO
+        ========================= */
+
+        .action-box {
+            background: linear-gradient(
+                135deg,
+                #0797d5,
+                #4b70dc
+            );
+
+            color: white;
+
+            border-radius: 30px;
+
+            padding: 40px;
+
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .action-item {
+            background: rgba(255, 255, 255, 0.15);
+
+            padding: 15px;
+
+            border-radius: 15px;
+
+            margin-bottom: 12px;
+
+            transition: 0.2s;
+        }
+
+        .action-item:hover {
+            transform: translateX(5px);
+            background: rgba(255, 255, 255, 0.22);
+        }
+
+
+        /* =========================
+           PROFESSIONAL HELP
+        ========================= */
+
+        .professional-box {
+            background: white;
+
+            border-radius: 30px;
+
+            padding: 40px;
+
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .doctor-icon {
+            font-size: 70px;
+        }
+
+        .help-card {
+            border: none;
+
+            border-radius: 25px;
+
+            height: 100%;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.08);
+
+            transition: 0.3s;
+        }
+
+        .help-card:hover {
+            transform: translateY(-6px);
+
+            box-shadow:
+                0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .help-icon {
+            font-size: 55px;
+        }
+
+
+        /* =========================
+           HELP NUMBER
+        ========================= */
+
+        .phone-number {
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+
+        /* =========================
+           EMERGENCY
+        ========================= */
+
+        .emergency-box {
+            border: 2px solid #dc3545;
+            border-radius: 20px;
+            padding: 20px;
+            background: #fff5f5;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #30205f;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 35px 20px;
+
+            margin-top: 50px;
+        }
+
+
+        /* =========================
+           ANIMATION
+        ========================= */
+
+        .fade-in {
+            animation: fadeIn 0.6s ease;
+        }
+
+        @keyframes fadeIn {
+
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .hero-text {
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 27px;
+            }
+
+            .poster-container {
+                margin-top: 25px;
+            }
+
+        }
+
+        @media (max-width: 576px) {
+
+            .hero {
+                padding: 50px 15px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+                padding: 10px 18px;
+            }
+
+            .poster-image {
+                border-radius: 15px;
+            }
+
+            .result-header {
+                padding: 30px 20px;
+            }
+
+            .professional-box {
+                padding: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     NAVBAR
+===================================== -->
+
+<nav class="navbar navbar-expand-lg sticky-top">
+
+    <div class="container">
+
+        <a
+            class="navbar-brand"
+            href="#"
+        >
+            💙 Memahami Perasaan
+        </a>
+
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarMenu"
+        >
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <div
+            class="collapse navbar-collapse"
+            id="navbarMenu"
+        >
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="#perasaan"
+                    >
+                        Pilih Perasaan
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="#faktor"
+                    >
+                        Faktor
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="#bantuan"
+                    >
+                        Bantuan
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================
+     HERO
+===================================== -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <h1>
+            MEMAHAMI<br>
+            "DEPRESIVE FEELING"
+        </h1>
+
+
+        <div class="hero-subtitle">
+
+            BUKAN SEKADAR SEDIH BIASA
+
+        </div>
+
+
+        <p class="hero-text">
+
+            Kenali apa yang sedang kamu rasakan
+            dan temukan langkah kecil yang mungkin
+            dapat membantu.
+
+        </p>
+
+
+        <!-- POSTER -->
+
+        <div class="poster-container">
+
+            <img
+                src="foto.jpeg"
+                alt="Poster Memahami Depresive Feeling"
+                class="poster-image"
+            >
+
+        </div>
+
+
+        <a
+            href="#perasaan"
+            class="btn btn-light btn-lg start-button"
+        >
+
+            Mulai Cek Perasaan 💙
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     PILIH PERASAAN
+===================================== -->
+
+<section
+    id="perasaan"
+    class="section"
+>
+
+    <div class="container">
+
+        <h2 class="section-title">
+
+            🌱 Apa yang Sedang Kamu Rasakan?
+
+        </h2>
+
+
+        <p class="section-description">
+
+            Pilih kondisi yang paling mendekati
+            apa yang sedang kamu rasakan saat ini.
+            Tidak ada jawaban yang salah.
+
+        </p>
+
+
+        <div class="row g-4">
+
+
+            <!-- SEDIH -->
+
+            <div class="col-12 col-sm-6 col-lg-3">
+
+                <div
+                    class="card mood-card"
+                    onclick="showFeeling('sedih')"
+                >
+
+                    <div class="mood-icon text-center">
+                        😢
+                    </div>
+
+
+                    <div class="mood-title">
+                        Perasaan Sedih Terus-Menerus
+                    </div>
+
+
+                    <div class="mood-description">
+
+                        Merasa sedih dalam waktu yang
+                        cukup lama dan sulit kembali
+                        bersemangat.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PUTUS ASA -->
+
+            <div class="col-12 col-sm-6 col-lg-3">
+
+                <div
+                    class="card mood-card"
+                    onclick="showFeeling('putusasa')"
+                >
+
+                    <div class="mood-icon text-center">
+                        😔
+                    </div>
+
+
+                    <div class="mood-title">
+                        Merasa Putus Asa
+                    </div>
+
+
+                    <div class="mood-description">
+
+                        Merasa tidak memiliki harapan
+                        atau sulit melihat masa depan
+                        dengan positif.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- KEHILANGAN MINAT -->
+
+            <div class="col-12 col-sm-6 col-lg-3">
+
+                <div
+                    class="card mood-card"
+                    onclick="showFeeling('minat')"
+                >
+
+                    <div class="mood-icon text-center">
+                        😶
+                    </div>
+
+
+                    <div class="mood-title">
+                        Kehilangan Minat
+                    </div>
+
+
+                    <div class="mood-description">
+
+                        Tidak lagi tertarik melakukan
+                        aktivitas yang biasanya
+                        menyenangkan.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CEMAS -->
+
+            <div class="col-12 col-sm-6 col-lg-3">
+
+                <div
+                    class="card mood-card"
+                    onclick="showFeeling('cemas')"
+                >
+
+                    <div class="mood-icon text-center">
+                        😟
+                    </div>
+
+
+                    <div class="mood-title">
+                        Kecemasan Berlebihan
+                    </div>
+
+
+                    <div class="mood-description">
+
+                        Terlalu banyak khawatir,
+                        takut, atau pikiran sulit
+                        berhenti.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     HASIL PERASAAN
+===================================== -->
+
+<section
+    id="resultSection"
+    class="container pb-5"
+>
+
+    <div class="result-card fade-in">
+
+
+        <div class="result-header">
+
+            <div
+                id="resultIcon"
+                class="result-icon"
+            >
+                😢
+            </div>
+
+
+            <h2 id="resultTitle">
+                Hasil
+            </h2>
+
+
+            <p
+                id="resultDescription"
+                class="mb-0"
+            >
+                Pilihanmu
+            </p>
+
+        </div>
+
+
+
+        <div class="p-4 p-md-5">
+
+
+            <h4 class="text-center fw-bold">
+
+                Seberapa kuat perasaan ini?
+
+            </h4>
+
+
+            <p class="text-center text-muted">
+
+                Pilih tingkat yang paling mendekati
+                keadaanmu.
+
+            </p>
+
+
+            <div class="text-center mb-4">
+
+                <button
+                    class="btn btn-outline-success level-btn"
+                    onclick="changeLevel('ringan')"
+                >
+                    🟢 Ringan
+                </button>
+
+
+                <button
+                    class="btn btn-outline-warning level-btn"
+                    onclick="changeLevel('sedang')"
+                >
+                    🟡 Sedang
+                </button>
+
+
+                <button
+                    class="btn btn-outline-danger level-btn"
+                    onclick="changeLevel('berat')"
+                >
+                    🔴 Berat
+                </button>
+
+            </div>
+
+
+
+            <div class="alert alert-primary">
+
+                <strong>
+                    💡 Saran berdasarkan tingkat perasaan:
+                </strong>
+
+
+                <p
+                    id="levelMessage"
+                    class="mb-0 mt-2"
+                >
+                    Pilih tingkat perasaanmu
+                    untuk mendapatkan saran.
+                </p>
+
+            </div>
+
+
+
+            <h4 class="fw-bold mt-4 mb-3">
+
+                🌱 Langkah yang Bisa Dicoba
+
+            </h4>
+
+
+            <div id="solutionList"></div>
+
+
+
+            <div class="alert alert-info text-center rounded-4 mt-4">
+
+                <h5 class="fw-bold">
+                    💙 Pesan untukmu
+                </h5>
+
+
+                <p
+                    id="motivation"
+                    class="mb-0"
+                >
+                    Kamu tidak harus menyelesaikan
+                    semuanya sekaligus.
+                </p>
+
+            </div>
+
+
+
+            <div class="text-center mt-4">
+
+                <button
+                    onclick="backToFeeling()"
+                    class="btn btn-primary rounded-pill px-4"
+                >
+                    ← Pilih Perasaan Lain
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     FAKTOR PENYEBAB
+===================================== -->
+
+<section
+    id="faktor"
+    class="section"
+>
+
+    <div class="container">
+
+        <h2 class="section-title">
+
+            🔎 Faktor yang Dapat Memengaruhi
+            Perasaan
+
+        </h2>
+
+
+        <p class="section-description">
+
+            Beberapa kondisi kehidupan dapat
+            memengaruhi suasana hati dan kondisi
+            emosional seseorang.
+
+        </p>
+
+
+        <div class="row g-4">
+
+
+            <div class="col-md-4">
+
+                <div class="card info-card">
+
+                    <div class="info-header">
+                        📚 Tekanan Hidup
+                    </div>
+
+
+                    <div class="info-body">
+
+                        <p>
+
+                            Masalah sekolah, pekerjaan,
+                            keuangan, atau tekanan dari
+                            lingkungan dapat membuat
+                            seseorang merasa terbebani.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="col-md-4">
+
+                <div class="card info-card">
+
+                    <div class="info-header">
+                        👥 Masalah Hubungan
+                    </div>
+
+
+                    <div class="info-body">
+
+                        <p>
+
+                            Konflik dengan teman,
+                            pasangan, keluarga, atau
+                            lingkungan sosial dapat
+                            menjadi sumber tekanan.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="col-md-4">
+
+                <div class="card info-card">
+
+                    <div class="info-header">
+                        💔 Kegagalan atau Kehilangan
+                    </div>
+
+
+                    <div class="info-body">
+
+                        <p>
+
+                            Kehilangan orang yang
+                            disayangi, perubahan besar,
+                            atau mengalami kegagalan
+                            dapat memengaruhi perasaan.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     YANG PERLU DILAKUKAN
+===================================== -->
+
+<section class="container pb-5">
+
+    <div class="action-box">
+
+        <h2 class="fw-bold text-center mb-4">
+
+            🌱 Yang Perlu Dilakukan dan Diketahui
+
+        </h2>
+
+
+        <div class="row">
+
+            <div class="col-md-6">
+
+                <div class="action-item">
+
+                    💬 Ceritakan perasaan kepada
+                    orang yang dipercaya.
+
+                </div>
+
+
+                <div class="action-item">
+
+                    😴 Jaga tidur dan usahakan
+                    memiliki jadwal tidur yang teratur.
+
+                </div>
+
+
+                <div class="action-item">
+
+                    🚶 Lakukan aktivitas ringan
+                    seperti berjalan kaki.
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6">
+
+                <div class="action-item">
+
+                    🏃 Lakukan olahraga ringan
+                    sesuai kemampuan.
+
+                </div>
+
+
+                <div class="action-item">
+
+                    🎵 Lakukan hobi atau aktivitas
+                    yang membuatmu nyaman.
+
+                </div>
+
+
+                <div class="action-item">
+
+                    👨‍👩‍👧 Jangan menghadapi semuanya
+                    sendirian.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     BANTUAN PROFESIONAL
+===================================== -->
+
+<section
+    id="bantuan"
+    class="section"
+>
+
+    <div class="container">
+
+        <div class="professional-box">
+
+
+            <div class="text-center">
+
+                <div class="doctor-icon">
+                    👨‍⚕️
+                </div>
+
+
+                <h2 class="fw-bold">
+
+                    Jangan Ragu Mencari Bantuan
+
+                </h2>
+
+
+                <p class="text-muted mt-3">
+
+                    Jika perasaan ini bertahan lama
+                    dan mulai mengganggu kehidupan
+                    sehari-hari, jangan ragu untuk
+                    mencari bantuan.
+
+                </p>
+
+
+                <p>
+
+                    Kamu dapat berbicara dengan
+                    orang tua, guru, guru BK,
+                    teman yang dipercaya, konselor,
+                    psikolog, psikiater, atau
+                    tenaga kesehatan.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- ============================
+                 KARTU BANTUAN
+            ============================= -->
+
+            <div class="row g-4 mt-3">
+
+
+                <!-- ============================
+                     NOMOR 6285759150574
+                ============================= -->
+
+                <div class="col-md-6 mx-auto">
+
+                    <div class="card help-card">
+
+                        <div
+                            class="card-body text-center p-4"
+                        >
+
+                            <div class="help-icon">
+                                📞
+                            </div>
+
+
+                            <h4 class="fw-bold mt-2">
+
+                                Hubungi Orang yang
+                                Profesional
+
+                            </h4>
+
+
+                            <p class="text-muted">
+Vivi Nur Hasanah, S. Pd.
+
+                            </p>
+
+
+                            <div
+                                class="alert alert-primary
+                                       rounded-4"
+                            >
+
+                                <div class="phone-number">
+
+                                    📱 +62 812-2546-6938
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+                            <!-- WHATSAPP -->
+
+                            <a
+                                href="https://wa.me/6281225466938"
+                                target="_blank"
+                                rel="noopener"
+                                class="btn btn-success
+                                       rounded-pill
+                                       px-4 mt-2"
+                            >
+
+                                💬 WhatsApp
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ============================
+                     
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ============================
+                 PERINGATAN
+            ============================= -->
+
+            <div
+                class="alert alert-danger
+                       mt-4 rounded-4"
+            >
+
+                <strong>
+
+                    🚨 Jika kamu merasa ingin menyakiti
+                    diri sendiri atau merasa tidak aman:
+
+                </strong>
+
+                <br><br>
+
+                Jangan menghadapi keadaan tersebut
+                sendirian. Segera hubungi orang yang
+                kamu percaya atau layanan darurat/
+                fasilitas kesehatan terdekat.
+
+            </div>
+
+
+           
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer>
+
+    <h5 class="fw-bold">
+
+        💙 MEMAHAMI DEPRESIVE FEELING
+
+    </h5>
+
+
+    <p class="mb-1">
+
+        "Tidak apa-apa untuk tidak baik-baik saja."
+
+    </p>
+
+
+    <small>
+
+        Kenali perasaanmu • Jaga dirimu •
+        Jangan takut mencari bantuan
+
+    </small>
+
+    
+    <h6>
+        Created by Kaged
+    </h6>
+
+</footer>
+
+
+
+<!-- =====================================
+     JAVASCRIPT
+===================================== -->
+
+<script>
+
+    /* =========================
+       DATA PERASAAN
+    ========================= */
+
+    const feelingData = {
+
+        sedih: {
+
+            icon: "😢",
+
+            title:
+                "Perasaan Sedih Terus-Menerus",
+
+            description:
+                "Kamu mungkin sedang mengalami kesedihan yang terasa cukup lama atau sulit hilang.",
+
+            motivation:
+                "Merasa sedih bukan berarti kamu lemah. Berikan dirimu waktu untuk berproses.",
+
+            solutions: [
+
+                "Ceritakan apa yang kamu rasakan kepada orang yang kamu percaya.",
+
+                "Lakukan aktivitas ringan seperti berjalan kaki atau olahraga ringan.",
+
+                "Usahakan tidur dan makan secara teratur.",
+
+                "Berikan waktu kepada dirimu untuk beristirahat.",
+
+                "Lakukan kegiatan sederhana yang biasanya membuatmu nyaman.",
+
+                "Jika perasaan berlangsung lama dan mengganggu aktivitas, pertimbangkan untuk mencari bantuan profesional."
+
+            ]
+
+        },
+
+
+        putusasa: {
+
+            icon: "😔",
+
+            title:
+                "Merasa Putus Asa",
+
+            description:
+                "Perasaan seolah tidak memiliki harapan dapat terasa sangat berat. Kamu tidak harus menghadapinya sendirian.",
+
+            motivation:
+                "Keadaan hari ini tidak selalu menentukan masa depan. Fokus pada satu langkah kecil yang bisa dilakukan.",
+
+            solutions: [
+
+                "Bicaralah dengan orang yang kamu percaya.",
+
+                "Fokus pada satu hal kecil yang dapat kamu lakukan hari ini.",
+
+                "Jangan mengisolasi diri terlalu lama.",
+
+                "Tuliskan hal-hal kecil yang masih ingin kamu capai.",
+
+                "Cobalah melakukan aktivitas yang membuatmu merasa lebih nyaman.",
+
+                "Jika rasa putus asa terasa sangat berat, segera cari dukungan dari orang yang dipercaya atau profesional."
+
+            ]
+
+        },
+
+
+        minat: {
+
+            icon: "😶",
+
+            title:
+                "Kehilangan Minat atau Kesenangan",
+
+            description:
+                "Aktivitas yang biasanya menyenangkan mungkin sekarang terasa biasa saja atau tidak menarik.",
+
+            motivation:
+                "Tidak perlu memaksakan diri untuk langsung kembali produktif. Mulailah dengan satu aktivitas kecil.",
+
+            solutions: [
+
+                "Mulai dari aktivitas yang sederhana dan tidak terlalu berat.",
+
+                "Coba kembali melakukan hobi dalam waktu singkat.",
+
+                "Berjalan kaki atau melakukan aktivitas fisik ringan.",
+
+                "Tetap berinteraksi dengan orang yang membuatmu nyaman.",
+
+                "Buat target kecil untuk menyelesaikan satu aktivitas.",
+
+                "Jika kehilangan minat berlangsung lama, pertimbangkan untuk berkonsultasi dengan profesional."
+
+            ]
+
+        },
+
+
+        cemas: {
+
+            icon: "😟",
+
+            title:
+                "Kecemasan Berlebihan",
+
+            description:
+                "Pikiran yang terus memikirkan kemungkinan buruk dapat membuat pikiran dan tubuh terasa lelah.",
+
+            motivation:
+                "Kamu tidak harus menyelesaikan semua kekhawatiran sekaligus. Fokus pada apa yang bisa kamu kendalikan sekarang.",
+
+            solutions: [
+
+                "Tarik napas perlahan dan fokus pada pernapasan.",
+
+                "Coba teknik grounding dengan memperhatikan benda di sekitarmu.",
+
+                "Tuliskan hal-hal yang membuatmu khawatir.",
+
+                "Kurangi sementara informasi atau aktivitas yang membuat kecemasan meningkat.",
+
+                "Lakukan aktivitas ringan seperti berjalan atau peregangan.",
+
+                "Bicaralah dengan orang yang kamu percaya jika kecemasan terasa sulit dikendalikan."
+
+            ]
+
+        }
+
+    };
+
+
+    /* =========================
+       PILIH PERASAAN
+    ========================= */
+
+    function showFeeling(feeling) {
+
+        const selected = feelingData[feeling];
+
+
+        document.getElementById("resultIcon").innerHTML =
+            selected.icon;
+
+
+        document.getElementById("resultTitle").innerHTML =
+            selected.title;
+
+
+        document.getElementById("resultDescription").innerHTML =
+            selected.description;
+
+
+        document.getElementById("motivation").innerHTML =
+            selected.motivation;
+
+
+        const solutionList =
+            document.getElementById("solutionList");
+
+
+        solutionList.innerHTML = "";
+
+
+        selected.solutions.forEach(
+            function(solution, index) {
+
+                solutionList.innerHTML += `
+
+                    <div class="solution-item">
+
+                        <strong>
+                            ${index + 1}.
+                        </strong>
+
+                        ${solution}
+
+                    </div>
+
+                `;
+
+            }
+        );
+
+
+        document.getElementById("resultSection")
+            .style.display = "block";
+
+
+        document.getElementById("levelMessage")
+            .innerHTML =
+            "Pilih tingkat perasaanmu untuk mendapatkan saran yang lebih sesuai.";
+
+
+        document.getElementById("resultSection")
+            .scrollIntoView({
+                behavior: "smooth"
+            });
+
+    }
+
+
+    /* =========================
+       TINGKAT PERASAAN
+    ========================= */
+
+    function changeLevel(level) {
+
+        let message;
+
+
+        if (level === "ringan") {
+
+            message =
+                "Jika masih terasa ringan, kamu bisa mencoba langkah sederhana seperti beristirahat, melakukan aktivitas yang kamu sukai, menjaga tidur, dan berbicara dengan orang yang dipercaya.";
+
+        }
+
+
+        else if (level === "sedang") {
+
+            message =
+                "Jika mulai mengganggu kegiatan sehari-hari, cobalah jangan menghadapinya sendirian. Ceritakan kepada orang yang dipercaya seperti orang tua, teman, guru, atau guru BK.";
+
+        }
+
+
+        else {
+
+            message =
+                "Jika perasaan terasa sangat berat, berlangsung lama, atau membuatmu merasa tidak aman, segera cari dukungan dari orang yang dipercaya dan pertimbangkan bantuan profesional.";
+
+        }
+
+
+        document.getElementById("levelMessage")
+            .innerHTML = message;
+
+    }
+
+
+    /* =========================
+       KEMBALI
+    ========================= */
+
+    function backToFeeling() {
+
+        document.getElementById("resultSection")
+            .style.display = "none";
+
+
+        document.getElementById("perasaan")
+            .scrollIntoView({
+                behavior: "smooth"
+            });
+
+    }
+
+</script>
+
+
+
+<!-- BOOTSTRAP JAVASCRIPT -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+</body>
+
+</html>
